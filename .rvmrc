@@ -1,0 +1,6 @@
+if [[ -d "${rvm_path:-$HOME/.rvm}/environments" \
+  && -s "${rvm_path:-$HOME/.rvm}/environments/ruby-1.8.7@encode_with_alphabet" ]] ; then
+  \. "${rvm_path:-$HOME/.rvm}/environments/ruby-1.8.7@encode_with_alphabet"
+else
+  rvm --create  "ruby-1.8.7@encode_with_alphabet"
+fi
