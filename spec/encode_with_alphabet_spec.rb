@@ -1,8 +1,15 @@
 require 'spec_helper'
 
 module EncodeWithAlphabet
+  describe "works with big numbers" do
+    let(:number) { 98079714615416886934934209737619787751599303819750539264 }
+    specify { expect{ EncodeWithAlphabet.encode(number) }.to_not raise_error('number must be an integer') }
+  end
+
   describe "#encode" do
     subject { EncodeWithAlphabet.encode(number, alphabet) }
+
+
     context "when alphabet is '01'" do
       let(:alphabet) { '01' }
 
